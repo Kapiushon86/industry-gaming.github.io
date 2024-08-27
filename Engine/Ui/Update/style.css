@@ -1,0 +1,103 @@
+.release-content {
+    padding: 30px;
+}
+
+.release-details-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: #0b0b0b;
+    border-radius: 8px;
+    border: 1px solid #F0113C;
+}
+
+.release-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.release-date {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.release-category {
+    margin-bottom: 30px;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: #f0113c;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f0113c;
+    padding-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.feature-list {
+    list-style-position: inside; 
+    padding-left: 0;
+}
+
+.feature-list li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    padding-left: 30px; 
+}
+
+.feature-list li::marker {
+    margin-left: -30px; 
+    color: white;
+}
+
+.release-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Mobile Optimization */
+
+@media (max-width: 768px) {
+    .release-content {
+        padding: 20px;
+    }
+
+    .release-details-section {
+        padding: 15px 20px;
+    }
+
+    .release-title {
+        font-size: 2rem;
+    }
+
+    .release-date {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        padding-bottom: 3px;
+    }
+
+    .feature-list li {
+        font-size: 1rem;
+        padding-left: 25px; 
+    }
+
+    .update-header {
+        margin-left: -25px; 
+    }
+
+    .release-description p {
+        font-size: 1rem;
+    }
+}
