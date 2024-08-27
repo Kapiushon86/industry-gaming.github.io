@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastViewTime = localStorage.getItem('last_view_time');
     const viewDelay = 24 * 60 * 60 * 1000; // 24 hours
 
-    // Function to determine if alert should be shown
+   
     function shouldShowAlert() {
         // Check if the stored version is different or if the alert needs to be shown after 24 hours
         return currentVersion !== storedVersion || !lastViewTime || Date.now() - lastViewTime > viewDelay;
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
 
-    // Handle dismiss button click
     dismissButton.addEventListener('click', function() {
         alert.classList.remove('show');
         setTimeout(() => {
@@ -33,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('site_version', currentVersion);
     });
 
-    // Handle view button click
     viewButton.addEventListener('click', function() {
         alert.classList.remove('show');
         setTimeout(() => {
