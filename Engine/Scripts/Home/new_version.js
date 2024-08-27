@@ -8,44 +8,39 @@ document.addEventListener('DOMContentLoaded', function() {
     const lastViewTime = localStorage.getItem('last_view_time');
     const viewDelay = 24 * 60 * 60 * 1000; // 24 hours
 
-    // We always want to clear previous version data if it doesn't match the current one,
-    // because why would you store extra info you don't need?
-    // Also ensures old data won't interfere with new data.
-    if (storedVersion && currentVersion !== storedVersion) {
-        localStorage.removeItem('site_version');
-        localStorage.removeItem('last_view_time'); 
+    // Function to determine if alert should be shown
+    function shouldShowAlert() {
+        // Check if the stored version is different or if the alert needs to be shown after 24 hours
+        return currentVersion !== storedVersion || !lastViewTime || Date.now() - lastViewTime > viewDelay;
     }
 
-    // We will show the alert if the current version is not stored or if 24 hours have passed
-    // since the last view time, ensuring it won't show again until the conditions are met.
-    if (currentVersion !== storedVersion || !lastViewTime || Date.now() - lastViewTime > viewDelay) {
+    // Show the alert if conditions are met
+    if (shouldShowAlert()) {
         setTimeout(() => {
             alert.classList.remove('hidden');
             alert.classList.add('show');
         }, 2000);
     }
 
-    
+    // Handle dismiss button click
     dismissButton.addEventListener('click', function() {
         alert.classList.remove('show');
         setTimeout(() => {
             alert.classList.add('hidden');
         }, 500);
 
-        // Then last we will store the current version in localStorage to avoid showing the alert again for 
-        // the same exact version.
+        // Set version in localStorage to ensure alert does not show again until version changes
         localStorage.setItem('site_version', currentVersion);
     });
 
-   
+    // Handle view button click
     viewButton.addEventListener('click', function() {
         alert.classList.remove('show');
         setTimeout(() => {
             alert.classList.add('hidden');
         }, 500);
 
-        // Store the current view time to prevent showing the alert again for 24 hours,
-        // and also store the current version to ensure the alert is reset for future versions.
+        // Store view time and current version
         localStorage.setItem('last_view_time', Date.now().toString());
         localStorage.setItem('site_version', currentVersion);
     });
