@@ -13,23 +13,23 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateY(-100px); 
+    transform: translateY(-100px);
     transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: none; 
+    pointer-events: none;
     border-bottom: 2px solid #f0113c;
 }
 
 .alert.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; 
+    pointer-events: auto;
     animation: fadeIn 0.5s ease-out, slideIn 0.5s ease-out;
 }
 
 .alert.hidden {
     opacity: 0;
     transform: translateY(-100px);
-    pointer-events: none; 
+    pointer-events: none;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -56,8 +56,8 @@
     background-color: #f0113c;
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
     margin-right: 5px;
+    padding: 10px 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1rem;
