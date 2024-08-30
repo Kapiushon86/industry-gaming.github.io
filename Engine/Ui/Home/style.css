@@ -1,5 +1,4 @@
 
-
 .alert {
     position: fixed;
     top: 0px;
@@ -14,27 +13,25 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateY(-100px); /* Start off-screen */
+    transform: translateY(-100px); 
     transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: none; /* Ensure it doesn't block interactions */
+    pointer-events: none; 
     border-bottom: 2px solid #f0113c;
 }
 
 .alert.show {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto; /* Allow interactions when visible */
+    pointer-events: auto; 
     animation: fadeIn 0.5s ease-out, slideIn 0.5s ease-out;
 }
 
 .alert.hidden {
     opacity: 0;
     transform: translateY(-100px);
-    pointer-events: none; /* Ensure it doesn't block interactions */
+    pointer-events: none; 
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
-
 
 .alert-content {
     display: flex;
@@ -50,7 +47,6 @@
     font-size: 1.2rem;
 }
 
-
 .alert-actions {
     display: flex;
     gap: 10px;
@@ -61,6 +57,7 @@
     color: #ffffff;
     border: none;
     padding: 10px 20px;
+    margin-right: 5px;
     cursor: pointer;
     text-decoration: none;
     font-size: 1rem;
